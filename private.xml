@@ -37,10 +37,10 @@
 		<device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB</device_only>
 		<autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::JIS_EISUU</autogen>
         <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::JIS_KANA</autogen>
-		<autogen>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT</autogen>
-		<autogen>--KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_DOWN</autogen>
-		<autogen>--KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_UP</autogen>
-		<autogen>--KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT</autogen>
+		<autogen>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT</autogen>
+		<autogen>--KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_DOWN</autogen>
+		<autogen>--KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP</autogen>
+		<autogen>--KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_RIGHT</autogen>
 	</item>
 
 	<item>
