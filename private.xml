@@ -4,6 +4,10 @@
 		<vendorname>TOPRE</vendorname>	
 		<vendorid>0x0853</vendorid>
 	</devicevendordef>
+	<devicevendordef>
+		<vendorname>PI</vendorname>	
+		<vendorid>0x05f3</vendorid>
+	</devicevendordef>
 	<deviceproductdef>
 		<productname>RF86</productname>
 		<productid>0x010e</productid>
@@ -11,6 +15,10 @@
 	<deviceproductdef>
 		<productname>HHKB</productname>
 		<productid>0x0100</productid>
+	</deviceproductdef>
+	<deviceproductdef>
+		<productname>KINESIS</productname>
+		<productid>0x0007</productid>
 	</deviceproductdef>
 	<devicevendordef>
 		<vendorname>APPLE</vendorname>	
@@ -22,35 +30,46 @@
 	</deviceproductdef>
 	
 	<item>
+		<name>VMWare Windows</name>	
+		<identifier>private.vmware_windows</identifier>
+		<only>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</only>
+        <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+		<autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
+    </item>
+    <item>
 		<name>rf86 Key Fix</name>	
 		<identifier>private.rf86_key_fix</identifier>
 		<device_only>DeviceVendor::TOPRE, DeviceProduct::RF86</device_only>
+		<not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
         <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
 		<autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
 		<autogen>--KeyOverlaidModifier-- KeyCode::OPTION_L, KeyCode::COMMAND_L, KeyCode::JIS_EISUU</autogen>
         <autogen>--KeyOverlaidModifier-- KeyCode::OPTION_R, KeyCode::COMMAND_R, KeyCode::JIS_KANA</autogen>
+		<autogen>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT</autogen>
+		<autogen>--KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_DOWN</autogen>
+		<autogen>--KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_UP</autogen>
+		<autogen>--KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT</autogen>
 	</item>
-
 	<item>
 		<name>HHKB Key Fix</name>	
 		<identifier>private.hhkb_key_fix</identifier>
 		<device_only>DeviceVendor::TOPRE, DeviceProduct::HHKB</device_only>
+		<not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
 		<autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::JIS_EISUU</autogen>
         <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::JIS_KANA</autogen>
-		<autogen>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT</autogen>
-		<autogen>--KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_DOWN</autogen>
-		<autogen>--KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP</autogen>
-		<autogen>--KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_RIGHT</autogen>
+		<autogen>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT</autogen>
+		<autogen>--KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_DOWN</autogen>
+		<autogen>--KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_UP</autogen>
+		<autogen>--KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT</autogen>
 	</item>
-
 	<item>
 		<name>command key to kana/eisu</name>	
-		<identifier>private.commandfix</identifier>	
+		<identifier>private.commandfix</identifier>
+		<not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
 		<device_only>DeviceVendor::APPLE, DeviceProduct::INTERNAL</device_only>
 		<autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::JIS_EISUU</autogen>
         <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::JIS_KANA</autogen>
 	</item>
-
 	<item>
 		<name>Ctrl + J to ESC</name>
 		<identifier>private.ctrl_j_to_esc</identifier>
